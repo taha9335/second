@@ -38,7 +38,7 @@ body {
   font-family: Verdana, Arial, Helvetica, sans-serif;
   font-size: 16px;
   font-weight: bold;
-  color: #BA002E;
+  color: #127bb5;
   text-align: left;
   padding: 10px;
 }
@@ -112,11 +112,17 @@ body {
   background: transparent;
   transition: background 0.12s ease;
 }
-.fz:hover,
 .fz.active {
   background: rgba(18,123,181,0.30);
   outline: 2px solid var(--bg-hl);
   outline-offset: -1px;
+}
+@media (hover: hover) {
+  .fz:hover {
+    background: rgba(18,123,181,0.30);
+    outline: 2px solid var(--bg-hl);
+    outline-offset: -1px;
+  }
 }
 
 /* ── FOOTER ── */
@@ -137,10 +143,6 @@ body {
 </style>
 </head>
 <body>
-
-<div class="logo-bar">
-  <img src="bilder/gtue-logo_gross.png" alt="GTÜ-Logo">
-</div>
 
 <div class="page-wrap">
   <div class="page-title">Seit 1. Oktober 2005 gibt es die neuen Fahrzeugpapiere</div>
@@ -330,13 +332,7 @@ body {
   </div>
 </div>
 
-<div class="page-footer">
-  © GTÜ, 07/2024 &nbsp;•&nbsp;
-  Fon: <a href="tel:+4971197676555">0711 97676-555</a> &nbsp;•&nbsp;
-  Fax: 0711 97676-559 &nbsp;•&nbsp;
-  Internet: <a href="https://www.gtue.de" target="_blank">www.gtue.de</a> &nbsp;•&nbsp;
-  E-Mail: <a href="mailto:technik-hotline@gtue.de">technik-hotline@gtue.de</a>
-</div>
+
 
 <script>
 // ═══════════════════════════════════════════════════════
@@ -344,24 +340,43 @@ body {
 //  Hover a field on either image → highlight matching field(s) on the other
 // ═══════════════════════════════════════════════════════
 
+function clearAll() {
+  document.querySelectorAll('.fz.active').forEach(function(el) { el.classList.remove('active'); });
+}
+
 document.querySelectorAll('.fz').forEach(function(zone) {
   var partnerIds = (zone.getAttribute('data-partners') || '').split(',').filter(Boolean);
 
-  zone.addEventListener('mouseenter', function() {
+  function activate() {
     zone.classList.add('active');
     partnerIds.forEach(function(pid) {
       var el = document.getElementById(pid.trim());
       if (el) el.classList.add('active');
     });
-  });
-
-  zone.addEventListener('mouseleave', function() {
+  }
+  function deactivate() {
     zone.classList.remove('active');
     partnerIds.forEach(function(pid) {
       var el = document.getElementById(pid.trim());
       if (el) el.classList.remove('active');
     });
-  });
+  }
+
+  zone.addEventListener('mouseenter', activate);
+  zone.addEventListener('mouseleave', deactivate);
+  zone.addEventListener('touchstart', function(e) {
+    e.preventDefault();
+    var wasActive = zone.classList.contains('active');
+    clearAll();
+    if (!wasActive) activate();
+  }, {passive: false});
+});
+
+// Tap on empty area clears all highlights
+document.addEventListener('touchstart', function(e) {
+  if (!e.target.closest('.fz')) {
+    clearAll();
+  }
 });
 </script>
 </body>
