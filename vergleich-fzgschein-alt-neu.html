@@ -443,9 +443,12 @@ var popupMap = {
 document.querySelectorAll('#neuWrap .fz').forEach(function(zone) {
   var url = popupMap[zone.id];
   if (url) {
-    zone.addEventListener('click', function() {
+    function openModal(e) {
+      e.preventDefault();
       showInfo(infoBase + url);
-    });
+    }
+    zone.addEventListener('click', openModal);
+    zone.addEventListener('touchend', openModal, {passive: false});
   }
 });
 
@@ -464,7 +467,7 @@ window.addEventListener('message', function(e) {
 </script>
 
 <div id="infoModal" onclick="if(event.target===this)closeInfo()" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.45);z-index:9999;">
-  <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:92%;max-width:440px;height:70vh;max-height:380px;background:#fff;border-radius:5px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,0.3);">
+  <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:98vw;height:80vh;background:#fff;border-radius:5px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,0.3);">
     <div style="display:flex;justify-content:flex-end;padding:2px 6px;background:#eee;border-bottom:1px solid #ccc;">
       <button onclick="closeInfo()" style="border:none;background:none;font-size:20px;cursor:pointer;color:#555;padding:0 4px;line-height:1;">&#10005;</button>
     </div>
