@@ -11,7 +11,374 @@
   --bg-hl: #127bb5;
 }
 * { box-sizing: border-box; margin: 0; padding: 0; }
-html {
+html {<meta name="viewport" content="width=860">
+<style>
+.altNeu-outer-wrap {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.altNeu-scale-wrap {
+  width: 860px;
+  position: relative;
+}
+.altNeu-page-wrap {
+  width: 860px;
+  background: #fff;
+  padding: 10px 16px 20px;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 10px;
+  color: #000;
+  box-sizing: border-box;
+}
+.altNeu-page-wrap * { box-sizing: border-box; margin: 0; padding: 0; }
+
+.altNeu-page-title { font-size: 18px; font-weight: bold; color: #127bb5; padding: 10px 0 4px; }
+.altNeu-page-subtitle { font-size: 10px; font-weight: bold; color: #000; padding: 0 0 4px; }
+.altNeu-page-desc { font-size: 10px; color: #000; line-height: normal; padding: 0 0 10px; }
+.altNeu-section-header { font-size: 14px; font-weight: bold; color: #127bb5; padding: 10px 0 4px; }
+.altNeu-legend { font-size: 12px; color: #000; padding: 0 0 4px; }
+.altNeu-legend .swatch-new { display:inline-block; width:26px; height:7px; background:#e8a0b0; vertical-align:middle; margin-right:3px; }
+.altNeu-legend .swatch-gone { display:inline-block; width:26px; height:7px; background:#a0c8e8; vertical-align:middle; margin-right:3px; }
+
+.altNeu-gif-wrap {
+  position: relative;
+  display: block;
+  width: 800px;
+  height: 340px;
+  margin: 0 0 10px;
+}
+.altNeu-gif-wrap img {
+  display: block;
+  width: 800px;
+  height: 340px;
+  position: absolute;
+  top: 0; left: 0;
+}
+.altNeu-fz {
+  position: absolute;
+  cursor: pointer;
+  z-index: 2;
+  background: transparent;
+  transition: background 0.12s ease;
+}
+.altNeu-fz.active {
+  background: rgba(18,123,181,0.30);
+  outline: 2px solid #127bb5;
+  outline-offset: -1px;
+}
+@media (hover: hover) {
+  .altNeu-fz:hover {
+    background: rgba(18,123,181,0.30);
+    outline: 2px solid #127bb5;
+    outline-offset: -1px;
+  }
+}
+.altNeu-data-source { font-size: 10px; color: #000; line-height: normal; padding: 10px 0 0; }
+</style>
+
+<div class="altNeu-outer-wrap">
+  <div class="altNeu-scale-wrap" id="altNeuScaleWrap">
+    <div class="altNeu-page-wrap">
+      <!-- NEW -->
+      <div class="altNeu-section-header">Die neue Zulassungsbescheinigung Teil I</div>
+      <div class="altNeu-legend"><span class="swatch-new"></span> = Neues Feld</div>
+
+      <div class="altNeu-gif-wrap" id="altNeuNeuWrap">
+        <img src="https://taha9335.github.io/second/fzgschein_neu.gif" alt="Neue Zulassungsbescheinigung Teil I">
+
+        <div class="altNeu-fz" id="an-neu-b"      data-partners="an-alt-32"                style="left:238px;top:13px;width:115px;height:16px" title="B: Datum der Erstzulassung des Fahrzeuges"></div>
+        <div class="altNeu-fz" id="an-neu-02-1"   data-partners="an-alt-zu2"               style="left:353px;top:13px;width:58px;height:16px"  title="(2.1): Code zu (2)"></div>
+        <div class="altNeu-fz" id="an-neu-02-2"   data-partners="an-alt-zu3"               style="left:413px;top:13px;width:95px;height:16px"  title="(2.2): Code zu D.2 mit Prüfziffer"></div>
+        <div class="altNeu-fz" id="an-neu-j"      data-partners="an-alt-zu1"               style="left:238px;top:28px;width:134px;height:17px" title="J: Fahrzeugklasse"></div>
+        <div class="altNeu-fz" id="an-neu-04"     data-partners="an-alt-zu1"               style="left:372px;top:29px;width:137px;height:15px" title="(4): Art des Aufbaus"></div>
+        <div class="altNeu-fz" id="an-neu-e"      data-partners="an-alt-04"                style="left:236px;top:45px;width:215px;height:17px" title="E: Fahrzeug-Identifizierungsnummer"></div>
+        <div class="altNeu-fz" id="an-neu-03"     data-partners="an-alt-04"                style="left:451px;top:45px;width:59px;height:17px"  title="(3): Prüfziffer zur Fahrzeug-Identifizierungsnummer"></div>
+        <div class="altNeu-fz" id="an-neu-d1"                                              style="left:236px;top:62px;width:275px;height:16px" title="D.1: Marke"></div>
+        <div class="altNeu-fz" id="an-neu-d2a"    data-partners="an-alt-03"               style="left:237px;top:78px;width:273px;height:16px" title="D.2: Typ/Variante/Version"></div>
+        <div class="altNeu-fz" id="an-neu-d2b"                                             style="left:236px;top:93px;width:274px;height:50px" title="D.2: Typ/Variante/Version (Fortsetzung)"></div>
+        <div class="altNeu-fz" id="an-neu-d3"                                              style="left:236px;top:142px;width:275px;height:16px" title="D.3: Handelsbezeichnung(en)"></div>
+        <div class="altNeu-fz" id="an-neu-02"     data-partners="an-alt-02"               style="left:236px;top:157px;width:274px;height:18px" title="(2): Hersteller-Kurzbezeichnung"></div>
+        <div class="altNeu-fz" id="an-neu-05"     data-partners="an-alt-01a"              style="left:236px;top:174px;width:273px;height:33px" title="(5): Bezeichnung der Fahrzeugklasse und des Aufbaus"></div>
+        <div class="altNeu-fz" id="an-neu-v9"                                              style="left:236px;top:207px;width:273px;height:17px" title="V.9: Schadstoffklasse"></div>
+        <div class="altNeu-fz" id="an-neu-14"     data-partners="an-alt-01b"              style="left:236px;top:223px;width:273px;height:16px" title="(14): Bezeichnung der nationalen Emissionsklasse"></div>
+        <div class="altNeu-fz" id="an-neu-p3"     data-partners="an-alt-05a"              style="left:237px;top:238px;width:273px;height:17px" title="P.3: Kraftstoffart oder Energiequelle"></div>
+        <div class="altNeu-fz" id="an-neu-10"     data-partners="an-alt-05b"              style="left:236px;top:255px;width:87px;height:16px"  title="(10): Code zu P.3"></div>
+        <div class="altNeu-fz" id="an-neu-14-1"   data-partners="an-alt-zu1"              style="left:323px;top:255px;width:89px;height:17px"  title="(14.1): Code zu V.9 oder (14)"></div>
+        <div class="altNeu-fz" id="an-neu-p1"     data-partners="an-alt-08"               style="left:411px;top:255px;width:99px;height:17px"  title="P.1: Hubraum in cm³"></div>
+        <div class="altNeu-fz" id="an-neu-22"     data-partners="an-alt-33,an-alt-33b"    style="left:237px;top:270px;width:558px;height:51px" title="(22): Bemerkungen und Ausnahmen"></div>
+        <div class="altNeu-fz" id="an-neu-l"      data-partners="an-alt-18"               style="left:520px;top:12px;width:48px;height:18px"  title="L: Anzahl der Achsen"></div>
+        <div class="altNeu-fz" id="an-neu-09"     data-partners="an-alt-19"               style="left:568px;top:13px;width:50px;height:16px"  title="(9): Anzahl der Antriebsachsen"></div>
+        <div class="altNeu-fz" id="an-neu-p2-p4"  data-partners="an-alt-07"               style="left:618px;top:13px;width:117px;height:16px" title="P.2/P.4: Nennleistung in kW / Nenndrehzahl"></div>
+        <div class="altNeu-fz" id="an-neu-t"      data-partners="an-alt-06"               style="left:734px;top:14px;width:60px;height:16px"  title="T: Höchstgeschwindigkeit in km/h"></div>
+        <div class="altNeu-fz" id="an-neu-18"     data-partners="an-alt-13l"              style="left:519px;top:29px;width:137px;height:16px" title="(18): Länge in mm"></div>
+        <div class="altNeu-fz" id="an-neu-19"     data-partners="an-alt-13b"              style="left:656px;top:28px;width:138px;height:17px" title="(19): Breite in mm"></div>
+        <div class="altNeu-fz" id="an-neu-20"     data-partners="an-alt-13h"              style="left:519px;top:45px;width:137px;height:17px" title="(20): Höhe in mm"></div>
+        <div class="altNeu-fz" id="an-neu-g"      data-partners="an-alt-14"               style="left:655px;top:45px;width:139px;height:17px" title="G: Masse des Fahrzeugs in kg (Leermasse)"></div>
+        <div class="altNeu-fz" id="an-neu-12"     data-partners="an-alt-10"               style="left:519px;top:61px;width:79px;height:17px"  title="(12): Rauminhalt des Tanks"></div>
+        <div class="altNeu-fz" id="an-neu-13"     data-partners="an-alt-16v"              style="left:598px;top:62px;width:96px;height:16px"  title="(13): Stützlast in kg"></div>
+        <div class="altNeu-fz" id="an-neu-q"                                              style="left:694px;top:62px;width:100px;height:17px" title="Q: Leistungsgewicht in kW/kg"></div>
+        <div class="altNeu-fz" id="an-neu-v7"                                             style="left:519px;top:77px;width:78px;height:16px"  title="V.7: CO₂ kombinierter Wert"></div>
+        <div class="altNeu-fz" id="an-neu-f1"     data-partners="an-alt-15"               style="left:597px;top:77px;width:98px;height:17px"  title="F.1: Technisch zulässige Gesamtmasse in kg"></div>
+        <div class="altNeu-fz" id="an-neu-f2"     data-partners="an-alt-15"               style="left:694px;top:77px;width:101px;height:17px" title="F.2: Im Zulassungsmitgliedstaat zulässige Gesamtmasse"></div>
+        <div class="altNeu-fz" id="an-neu-07-1"   data-partners="an-alt-16v"              style="left:519px;top:93px;width:77px;height:17px"  title="(7.1): Techn. zul. max. Achslast, Achse 1"></div>
+        <div class="altNeu-fz" id="an-neu-07-2"   data-partners="an-alt-16h"              style="left:597px;top:94px;width:98px;height:16px"  title="(7.2): Techn. zul. max. Achslast, Achse 2"></div>
+        <div class="altNeu-fz" id="an-neu-07-3"                                           style="left:694px;top:94px;width:100px;height:17px" title="(7.3): Techn. zul. max. Achslast, Achse 3"></div>
+        <div class="altNeu-fz" id="an-neu-08-1"   data-partners="an-alt-16v"              style="left:519px;top:110px;width:79px;height:16px" title="(8.1): Zul. max. Achslast, Achse 1"></div>
+        <div class="altNeu-fz" id="an-neu-08-2"   data-partners="an-alt-16h"              style="left:597px;top:110px;width:100px;height:17px" title="(8.2): Zul. max. Achslast, Achse 2"></div>
+        <div class="altNeu-fz" id="an-neu-08-3"                                           style="left:697px;top:110px;width:97px;height:16px" title="(8.3): Zul. max. Achslast, Achse 3"></div>
+        <div class="altNeu-fz" id="an-neu-u1"     data-partners="an-alt-30"               style="left:518px;top:125px;width:80px;height:17px" title="U.1: Standgeräusche in dB(A)"></div>
+        <div class="altNeu-fz" id="an-neu-u2"                                             style="left:598px;top:126px;width:97px;height:16px" title="U.2: Drehzahl in min⁻¹ zu U.1"></div>
+        <div class="altNeu-fz" id="an-neu-u3"     data-partners="an-alt-31"               style="left:694px;top:125px;width:100px;height:18px" title="U.3: Fahrgeräusch in dB(A)"></div>
+        <div class="altNeu-fz" id="an-neu-o1"     data-partners="an-alt-28"               style="left:520px;top:141px;width:78px;height:18px" title="O.1: Techn. zul. Anhängelast gebremst"></div>
+        <div class="altNeu-fz" id="an-neu-o2"     data-partners="an-alt-29"               style="left:597px;top:141px;width:88px;height:18px" title="O.2: Techn. zul. Anhängelast ungebremst"></div>
+        <div class="altNeu-fz" id="an-neu-s1"     data-partners="an-alt-12"               style="left:684px;top:141px;width:49px;height:17px" title="S.1: Sitzplätze einschließlich Fahrersitz"></div>
+        <div class="altNeu-fz" id="an-neu-s2"     data-partners="an-alt-11"               style="left:732px;top:142px;width:63px;height:17px" title="S.2: Stehplätze"></div>
+        <div class="altNeu-fz" id="an-neu-15-1"   data-partners="an-alt-20"               style="left:518px;top:158px;width:276px;height:17px" title="(15.1): Bereifung auf Achse 1"></div>
+        <div class="altNeu-fz" id="an-neu-15-2"   data-partners="an-alt-21"               style="left:518px;top:174px;width:276px;height:17px" title="(15.2): Bereifung auf Achse 2"></div>
+        <div class="altNeu-fz" id="an-neu-15-3"   data-partners="an-alt-21"               style="left:518px;top:191px;width:277px;height:16px" title="(15.3): Bereifung auf Achse 3"></div>
+        <div class="altNeu-fz" id="an-neu-r"                                              style="left:519px;top:206px;width:167px;height:17px" title="R: Farbe des Fahrzeuges"></div>
+        <div class="altNeu-fz" id="an-neu-11"     data-partners="an-alt-32"               style="left:685px;top:206px;width:109px;height:17px" title="(11): Code zu R"></div>
+        <div class="altNeu-fz" id="an-neu-k"                                              style="left:519px;top:222px;width:275px;height:17px" title="K: Nummer der EG-Typgenehmigung oder ABE"></div>
+        <div class="altNeu-fz" id="an-neu-06"                                             style="left:518px;top:239px;width:137px;height:16px" title="(6): Datum zu K"></div>
+        <div class="altNeu-fz" id="an-neu-17"                                             style="left:654px;top:238px;width:31px;height:17px"  title="(17): Merkmal zur Betriebserlaubnis"></div>
+        <div class="altNeu-fz" id="an-neu-16"                                             style="left:684px;top:239px;width:110px;height:16px" title="(16): Nummer der Zulassungsbescheinigung Teil II"></div>
+        <div class="altNeu-fz" id="an-neu-21"                                             style="left:518px;top:254px;width:276px;height:17px" title="(21): Sonstige Vermerke"></div>
+      </div>
+
+      <!-- OLD -->
+      <div class="altNeu-section-header">Der alte Fahrzeugschein</div>
+      <div class="altNeu-legend"><span class="swatch-gone"></span> = Feld entfällt</div>
+
+      <div class="altNeu-gif-wrap" id="altNeuAltWrap">
+        <img src="https://taha9335.github.io/second/fzgschein_alt.gif" alt="Alter Fahrzeugschein">
+
+        <div class="altNeu-fz" id="an-alt-zu1"  data-partners="an-neu-j,an-neu-04,an-neu-14-1"    style="left:268px;top:16px;width:91px;height:17px"  title="zu 1: Schlüsselnummern"></div>
+        <div class="altNeu-fz" id="an-alt-zu2"  data-partners="an-neu-02-1"                       style="left:359px;top:16px;width:67px;height:17px"  title="zu 2: Schlüsselnummern"></div>
+        <div class="altNeu-fz" id="an-alt-zu3"  data-partners="an-neu-02-2"                       style="left:426px;top:16px;width:94px;height:16px"  title="zu 3: Schlüsselnummern"></div>
+        <div class="altNeu-fz" id="an-alt-01a"  data-partners="an-neu-05"                         style="left:269px;top:32px;width:251px;height:17px" title="1: Fahrzeugklasse und Aufbau"></div>
+        <div class="altNeu-fz" id="an-alt-01b"  data-partners="an-neu-14"                         style="left:269px;top:47px;width:251px;height:19px" title="1: Emissionsklasse"></div>
+        <div class="altNeu-fz" id="an-alt-02"   data-partners="an-neu-02"                         style="left:268px;top:65px;width:252px;height:16px" title="2: Hersteller-Kurzbezeichnung"></div>
+        <div class="altNeu-fz" id="an-alt-03"   data-partners="an-neu-d2a"                        style="left:268px;top:80px;width:252px;height:18px" title="3: Typ"></div>
+        <div class="altNeu-fz" id="an-alt-04"   data-partners="an-neu-e,an-neu-03"                style="left:269px;top:97px;width:252px;height:17px" title="4: Fahrzeug-Identifizierungsnummer"></div>
+        <div class="altNeu-fz" id="an-alt-05a"  data-partners="an-neu-p3"                         style="left:268px;top:113px;width:111px;height:18px" title="5: Kraftstoffart"></div>
+        <div class="altNeu-fz" id="an-alt-05b"  data-partners="an-neu-10"                         style="left:379px;top:114px;width:28px;height:16px"  title="5: Code zu P.3"></div>
+        <div class="altNeu-fz" id="an-alt-06"   data-partners="an-neu-t"                          style="left:406px;top:113px;width:114px;height:17px" title="6: Höchstgeschwindigkeit in km/h"></div>
+        <div class="altNeu-fz" id="an-alt-07"   data-partners="an-neu-p2-p4"                      style="left:268px;top:130px;width:253px;height:16px" title="7: Nennleistung in kW / Nenndrehzahl"></div>
+        <div class="altNeu-fz" id="an-alt-08"   data-partners="an-neu-p1"                         style="left:269px;top:145px;width:251px;height:18px" title="8: Hubraum in cm³"></div>
+        <div class="altNeu-fz" id="an-alt-09"                                                     style="left:268px;top:163px;width:139px;height:16px" title="9: Nutz- oder Aufliegelast in kg"></div>
+        <div class="altNeu-fz" id="an-alt-10"   data-partners="an-neu-12"                         style="left:407px;top:163px;width:115px;height:16px" title="10: Rauminhalt des Tanks"></div>
+        <div class="altNeu-fz" id="an-alt-11"   data-partners="an-neu-s2"                         style="left:269px;top:178px;width:138px;height:17px" title="11: Steh-/Liegeplätze"></div>
+        <div class="altNeu-fz" id="an-alt-12"   data-partners="an-neu-s1"                         style="left:406px;top:178px;width:115px;height:17px" title="12: Sitzplätze einschließlich Fahrersitz"></div>
+        <div class="altNeu-fz" id="an-alt-13l"  data-partners="an-neu-18"                         style="left:269px;top:195px;width:128px;height:16px" title="13: Länge in mm"></div>
+        <div class="altNeu-fz" id="an-alt-13b"  data-partners="an-neu-19"                         style="left:396px;top:194px;width:59px;height:17px"  title="13: Breite in mm"></div>
+        <div class="altNeu-fz" id="an-alt-13h"  data-partners="an-neu-20"                         style="left:456px;top:195px;width:65px;height:16px"  title="13: Höhe in mm"></div>
+        <div class="altNeu-fz" id="an-alt-14"   data-partners="an-neu-g"                          style="left:269px;top:210px;width:128px;height:18px" title="14: Leergewicht in kg"></div>
+        <div class="altNeu-fz" id="an-alt-15"   data-partners="an-neu-f1,an-neu-f2"               style="left:396px;top:210px;width:125px;height:18px" title="15: Zulässiges Gesamtgewicht in kg"></div>
+        <div class="altNeu-fz" id="an-alt-16v"  data-partners="an-neu-13,an-neu-07-1,an-neu-08-1" style="left:534px;top:17px;width:124px;height:16px"  title="16v: Max. zul. Achslast vorne"></div>
+        <div class="altNeu-fz" id="an-alt-16m"                                                    style="left:658px;top:16px;width:63px;height:17px"   title="16m: Max. zul. Achslast mitte"></div>
+        <div class="altNeu-fz" id="an-alt-16h"  data-partners="an-neu-07-2,an-neu-08-2"           style="left:720px;top:16px;width:74px;height:17px"   title="16h: Max. zul. Achslast hinten"></div>
+        <div class="altNeu-fz" id="an-alt-17"                                                     style="left:533px;top:32px;width:90px;height:17px"   title="17: Räder/Gleisketten"></div>
+        <div class="altNeu-fz" id="an-alt-18"   data-partners="an-neu-l"                          style="left:622px;top:32px;width:89px;height:17px"   title="18: Anzahl der Achsen"></div>
+        <div class="altNeu-fz" id="an-alt-19"   data-partners="an-neu-09"                         style="left:711px;top:32px;width:83px;height:17px"   title="19: Anzahl der angetriebenen Achsen"></div>
+        <div class="altNeu-fz" id="an-alt-20"   data-partners="an-neu-15-1"                       style="left:534px;top:49px;width:259px;height:16px"  title="20: Bereifung auf Achse 1"></div>
+        <div class="altNeu-fz" id="an-alt-21"   data-partners="an-neu-15-2"                       style="left:534px;top:64px;width:260px;height:18px"  title="21: Bereifung auf Achse 2"></div>
+        <div class="altNeu-fz" id="an-alt-22"                                                     style="left:534px;top:82px;width:260px;height:16px"  title="22: Alternative Bereifung auf Achse 1"></div>
+        <div class="altNeu-fz" id="an-alt-23"                                                     style="left:533px;top:97px;width:261px;height:17px"  title="23: Alternative Bereifung auf Achse 2"></div>
+        <div class="altNeu-fz" id="an-alt-24"                                                     style="left:604px;top:113px;width:100px;height:17px" title="24: Überdruck Einleitungsbremse"></div>
+        <div class="altNeu-fz" id="an-alt-25"                                                     style="left:704px;top:114px;width:90px;height:16px"  title="25: Überdruck Zweileitungsbremse"></div>
+        <div class="altNeu-fz" id="an-alt-26"                                                     style="left:534px;top:130px;width:260px;height:17px" title="26: Anhängerkupplung, Form und Größe"></div>
+        <div class="altNeu-fz" id="an-alt-27"                                                     style="left:535px;top:146px;width:259px;height:16px" title="27: Anhängerkupplung, Prüfzeichen"></div>
+        <div class="altNeu-fz" id="an-alt-28"   data-partners="an-neu-o1"                         style="left:535px;top:161px;width:140px;height:18px" title="28: Anhängelast gebremst"></div>
+        <div class="altNeu-fz" id="an-alt-29"   data-partners="an-neu-o2"                         style="left:673px;top:161px;width:121px;height:18px" title="29: Anhängelast ungebremst"></div>
+        <div class="altNeu-fz" id="an-alt-30"   data-partners="an-neu-u1"                         style="left:535px;top:178px;width:140px;height:17px" title="30: Standgeräusch in dB(A)"></div>
+        <div class="altNeu-fz" id="an-alt-31"   data-partners="an-neu-u3"                         style="left:674px;top:179px;width:120px;height:16px" title="31: Fahrgeräusch in dB(A)"></div>
+        <div class="altNeu-fz" id="an-alt-32"   data-partners="an-neu-b,an-neu-11"                style="left:534px;top:194px;width:259px;height:17px" title="32: Datum der Erstzulassung"></div>
+        <div class="altNeu-fz" id="an-alt-33"   data-partners="an-neu-22"                         style="left:534px;top:211px;width:260px;height:18px" title="33: Bemerkungen"></div>
+        <div class="altNeu-fz" id="an-alt-33b"  data-partners="an-neu-22"                         style="left:269px;top:228px;width:524px;height:67px" title="33: Bemerkungen (Fortsetzung)"></div>
+      </div>
+
+      <div class="altNeu-data-source">
+        <strong>Datengrundlage:</strong><br>
+        Deutsches Kfz-Gewerbe Zentralverband, 09/2005: Neue Fahrzeugdokumente<br>
+        Kraftfahrtbundesamt, 2005: Leitfaden zur Ausfüllung der Zulassungsbescheinigungen Teil I + II
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- modal injected via JS into body -->
+
+<script>
+(function() {
+
+  /* ── Force desktop viewport on mobile ── */
+  (function() {
+    var existing = document.querySelector('meta[name="viewport"]');
+    if (existing) {
+      existing.setAttribute('content', 'width=860');
+    } else {
+      var meta = document.createElement('meta');
+      meta.name = 'viewport';
+      meta.content = 'width=860';
+      document.head.appendChild(meta);
+    }
+  })();
+
+
+
+  /* ── Fix popup iframe text spacing ── */
+  window.altNeuFixPopupText = function(iframe) {
+    try {
+      var doc = iframe.contentDocument || iframe.contentWindow.document;
+      var style = doc.createElement('style');
+      style.textContent = 'a, td, div, p, span { letter-spacing: normal !important; word-spacing: 4px !important; } a + a { margin-left: 8px !important; }';
+      doc.head.appendChild(style);
+    } catch(e) {}
+  };
+
+  /* ── Clear all ── */
+  function clearAll() {
+    document.querySelectorAll('.altNeu-fz.active').forEach(function(el){ el.classList.remove('active'); });
+  }
+
+  /* ── Bidirectional hover ── */
+  document.querySelectorAll('.altNeu-fz').forEach(function(zone) {
+    var partnerIds = (zone.getAttribute('data-partners') || '').split(',').filter(Boolean);
+
+    function activate() {
+      zone.classList.add('active');
+      partnerIds.forEach(function(pid) {
+        var el = document.getElementById(pid.trim());
+        if (el) el.classList.add('active');
+      });
+    }
+    function deactivate() {
+      zone.classList.remove('active');
+      partnerIds.forEach(function(pid) {
+        var el = document.getElementById(pid.trim());
+        if (el) el.classList.remove('active');
+      });
+    }
+    zone.addEventListener('mouseenter', activate);
+    zone.addEventListener('mouseleave', deactivate);
+    zone.addEventListener('touchstart', function(e) {
+      e.preventDefault();
+      var was = zone.classList.contains('active');
+      clearAll(); if (!was) activate();
+    }, {passive: false});
+  });
+
+  document.addEventListener('touchstart', function(e) {
+    if (!e.target.closest('.altNeu-fz')) clearAll();
+  });
+
+  /* ── Popups (neue image only) ── */
+  var infoBase = 'https://taha9335.github.io/second/info-seiten-altnu/';
+  var popupMap = {
+    'an-neu-b':'b_erstzulassung.htm','an-neu-02-1':'02-1_code_22.htm','an-neu-02-2':'02-2_code_d2.htm',
+    'an-neu-j':'j_fzg-klasse.htm','an-neu-04':'04_aufbau.htm','an-neu-e':'e_fzg-ident-nr.htm',
+    'an-neu-03':'03_fzg-ident-nr.htm','an-neu-d1':'d1_marke.htm','an-neu-d2a':'d2_typ.htm',
+    'an-neu-d2b':'d2_typ.htm','an-neu-d3':'d3_handelsbezeichnung.htm','an-neu-02':'02_hersteller.htm',
+    'an-neu-05':'05_fzg-klasse.htm','an-neu-v9':'v9_schadstoffklasse.htm','an-neu-14':'14_emissionsklasse.htm',
+    'an-neu-p3':'p3_kraftstoffart.htm','an-neu-10':'10_code_p3.htm','an-neu-14-1':'14-1_code_v9.htm',
+    'an-neu-p1':'p1_hubraum.htm','an-neu-22':'22_bemerkungen.htm','an-neu-l':'l_achsen.htm',
+    'an-neu-09':'09_antriebsachsen.htm','an-neu-p2-p4':'p2_p4_leistung.htm','an-neu-t':'t_geschwindigkeit.htm',
+    'an-neu-18':'18_laenge.htm','an-neu-19':'19_breite.htm','an-neu-20':'20_hoehe.htm',
+    'an-neu-g':'g_leermasse.htm','an-neu-12':'12_tankinhalt.htm','an-neu-13':'13_stuetzlast.htm',
+    'an-neu-q':'q_leistungsgewicht.htm','an-neu-v7':'v7_co2.htm','an-neu-f1':'f1_zgm.htm',
+    'an-neu-f2':'f2_zgm_staat.htm','an-neu-07-1':'07-1_achslast_max.htm','an-neu-07-2':'07-2_achslast_max.htm',
+    'an-neu-07-3':'07-3_achslast_max.htm','an-neu-08-1':'08-1_achslast_max.htm',
+    'an-neu-08-2':'08-2_achslast_max.htm','an-neu-08-3':'08-3_achslast_max.htm',
+    'an-neu-u1':'u1_standgeraeusch.htm','an-neu-u2':'u2_drehzahl.htm','an-neu-u3':'u3_fahrgeraeusch.htm',
+    'an-neu-o1':'o1_anhaengelast_gebremst.htm','an-neu-o2':'o2_anhaengelast_ungebremst.htm',
+    'an-neu-s1':'s1_sitzplaetze.htm','an-neu-s2':'s2_stehplaetze.htm',
+    'an-neu-15-1':'15-1_bereifung.htm','an-neu-15-2':'15-2_bereifung.htm','an-neu-15-3':'15-3_bereifung.htm',
+    'an-neu-r':'r_farbe.htm','an-neu-11':'11_code_r.htm','an-neu-k':'k_eg-typ_abe.htm',
+    'an-neu-06':'06_datum.htm','an-neu-17':'17_betriebserlaubnis.htm',
+    'an-neu-16':'16_zulassungsbescheinigung.htm','an-neu-21':'21_vermerke.htm'
+  };
+
+  document.querySelectorAll('#altNeuNeuWrap .altNeu-fz').forEach(function(zone) {
+    var url = popupMap[zone.id];
+    if (url) {
+      function openModal(e) { e.preventDefault(); altNeuShowInfo(infoBase + url); }
+      zone.addEventListener('click', openModal);
+      zone.addEventListener('touchend', openModal, {passive: false});
+    }
+  });
+
+  // Alt Fahrzeugschein zones: open popup via partner's URL
+  document.querySelectorAll('#altNeuAltWrap .altNeu-fz').forEach(function(zone) {
+    var partners = (zone.getAttribute('data-partners') || '').split(',').filter(Boolean);
+    var url = null;
+    for (var i = 0; i < partners.length; i++) {
+      var pid = partners[i].trim();
+      if (popupMap[pid]) { url = popupMap[pid]; break; }
+    }
+    if (url) {
+      (function(u) {
+        function openModal(e) { e.preventDefault(); altNeuShowInfo(infoBase + u); }
+        zone.addEventListener('click', openModal);
+        zone.addEventListener('touchend', openModal, {passive: false});
+      })(url);
+    }
+  });
+
+  /* ── Inject modal into body to avoid z-index/overflow clipping ── */
+  (function() {
+    var m = document.createElement('div');
+    m.id = 'altNeuModal';
+    m.setAttribute('onclick', 'if(event.target===this)altNeuCloseInfo()');
+    m.style.cssText = 'display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.55);z-index:2147483647;';
+    m.innerHTML = '<div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:720px;max-width:96vw;height:560px;background:#fff;border-radius:6px;overflow:hidden;box-shadow:0 6px 32px rgba(0,0,0,0.35);">'
+      + '<div style="display:flex;justify-content:flex-end;align-items:center;padding:4px 8px;background:#eee;border-bottom:1px solid #ccc;">'
+      + '<button onclick="altNeuCloseInfo()" style="border:none;background:none;font-size:22px;cursor:pointer;color:#555;padding:0 6px;line-height:1;">&#10005;</button>'
+      + '</div>'
+      + '<iframe id="altNeuFrame" style="width:100%;height:calc(100% - 32px);border:none;" src="about:blank"></iframe>'
+      + '</div>';
+    document.body.appendChild(m);
+    document.getElementById('altNeuFrame').addEventListener('load', function() {
+      altNeuFixPopupText(this);
+    });
+  })();
+
+  window.altNeuFixPopupText = function(iframe) {
+    try {
+      var doc = iframe.contentDocument || iframe.contentWindow.document;
+      if (!doc || !doc.body) return;
+      var existing = doc.getElementById('altNeu-fix-style');
+      if (existing) return;
+      var style = doc.createElement('style');
+      style.id = 'altNeu-fix-style';
+      style.textContent = 'a { padding: 0 10px !important; display: inline-block !important; } td { word-spacing: normal !important; letter-spacing: normal !important; }';
+      doc.head.appendChild(style);
+      // Directly space out navigation links
+      doc.querySelectorAll('a').forEach(function(a) {
+        a.style.padding = '0 10px';
+        a.style.display = 'inline-block';
+      });
+    } catch(e) {}
+  };
+
+  window.altNeuShowInfo = function(url) {
+    var modal = document.getElementById('altNeuModal');
+    var frame = document.getElementById('altNeuFrame');
+    frame.src = url;
+    modal.style.display = 'block';
+    document.body.style.overflow = 'hidden';
+  };
+  window.altNeuCloseInfo = function() {
+    var modal = document.getElementById('altNeuModal');
+    var frame = document.getElementById('altNeuFrame');
+    modal.style.display = 'none';
+    frame.src = 'about:blank';
+    document.body.style.overflow = '';
+  };
+  window.addEventListener('message', function(e) { if (e.data === 'closeModal') window.altNeuCloseInfo(); });
+
+})();
+</script>
   /* Prevents double scroll when embedded in iframe — page scrolls itself */
   overflow-y: auto;
 }
